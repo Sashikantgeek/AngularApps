@@ -1,0 +1,11 @@
+<div>
+  <h2>{{ "data.title" | translate }}</h2>
+  <p>{{ "data.text" | translate }}</p>
+  <label for="">
+    {{ "data.select|translate" }}
+    <select #langSelect (change)="translate.use(langSelect.value)"></select>
+    <option *ngFor="let lang of translate.getLangs()" value="lang">{{
+      lang
+    }}</option>
+  </label>
+</div>
